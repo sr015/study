@@ -64804,6 +64804,17 @@ function renderMatches(matches) {
 
 /***/ }),
 
+/***/ "./node_modules/react-timer-hook/dist/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react-timer-hook/dist/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js")):undefined}("undefined"!=typeof self?self:this,function(e){return function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=3)}([function(t,r){t.exports=e},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Validate=t.Time=void 0;var n=u(r(5)),o=u(r(6));function u(e){return e&&e.__esModule?e:{default:e}}t.Time=n.default,t.Validate=o.default},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.useInterval=void 0;var n=function(e){return e&&e.__esModule?e:{default:e}}(r(7));t.useInterval=n.default},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.useTime=t.useStopwatch=t.useTimer=void 0;var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};t.default=function(e){if((0,o.useEffect)(function(){console.warn("react-timer-hook: default export useTimer is deprecated, use named exports { useTimer, useStopwatch, useTime } instead")},[]),e.expiryTimestamp){var t=(0,u.default)(e);return n({},t,{startTimer:t.start,stopTimer:t.pause,resetTimer:function(){}})}var r=(0,i.default)(e);return n({},r,{startTimer:r.start,stopTimer:r.pause,resetTimer:r.reset})};var o=r(0),u=c(r(4)),i=c(r(8)),a=c(r(9));function c(e){return e&&e.__esModule?e:{default:e}}t.useTimer=u.default,t.useStopwatch=i.default,t.useTime=a.default},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},o=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var r=[],n=!0,o=!1,u=void 0;try{for(var i,a=e[Symbol.iterator]();!(n=(i=a.next()).done)&&(r.push(i.value),!t||r.length!==t);n=!0);}catch(e){o=!0,u=e}finally{try{!n&&a.return&&a.return()}finally{if(o)throw u}}return r}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}();t.default=function(e){var t=e.expiryTimestamp,r=e.onExpire,s=e.autoStart,l=void 0===s||s,d=(0,u.useState)(t),m=o(d,2),v=m[0],p=m[1],y=(0,u.useState)(i.Time.getSecondsFromExpiry(v)),T=o(y,2),g=T[0],b=T[1],h=(0,u.useState)(l),S=o(h,2),w=S[0],O=S[1],j=(0,u.useState)(l),x=o(j,2),_=x[0],M=x[1],P=(0,u.useState)(f(v)),F=o(P,2),E=F[0],k=F[1];function I(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];k(f(e)),M(t),O(t),p(e),b(i.Time.getSecondsFromExpiry(e))}function D(){var e=new Date;e.setMilliseconds(e.getMilliseconds()+1e3*g),I(e)}return(0,a.useInterval)(function(){E!==c&&k(c);var e=i.Time.getSecondsFromExpiry(v);b(e),e<=0&&(i.Validate.onExpire(r)&&r(),O(!1),k(null))},w?E:null),n({},i.Time.getTimeFromSeconds(g),{start:function(){_?(b(i.Time.getSecondsFromExpiry(v)),O(!0)):D()},pause:function(){O(!1)},resume:D,restart:I,isRunning:w})};var u=r(0),i=r(1),a=r(2),c=1e3;function f(e){if(!i.Validate.expiryTimestamp(e))return null;var t=i.Time.getSecondsFromExpiry(e),r=Math.floor(1e3*(t-Math.floor(t)));return r>0?r:c}},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}();var o=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e)}return n(e,null,[{key:"getTimeFromSeconds",value:function(e){var t=Math.ceil(e),r=Math.floor(t/86400),n=Math.floor(t%86400/3600),o=Math.floor(t%3600/60);return{seconds:Math.floor(t%60),minutes:o,hours:n,days:r}}},{key:"getSecondsFromExpiry",value:function(e,t){var r=e-(new Date).getTime();if(r>0){var n=r/1e3;return t?Math.round(n):n}return 0}},{key:"getSecondsFromPrevTime",value:function(e,t){var r=(new Date).getTime()-e;if(r>0){var n=r/1e3;return t?Math.round(n):n}return 0}},{key:"getSecondsFromTimeNow",value:function(){var e=new Date;return e.getTime()/1e3-60*e.getTimezoneOffset()}},{key:"getFormattedTimeFromSeconds",value:function(t,r){var n=e.getTimeFromSeconds(t),o=n.seconds,u=n.minutes,i=n.hours,a="",c=i;return"12-hour"===r&&(a=i>=12?"pm":"am",c=i%12),{seconds:o,minutes:u,hours:c,ampm:a}}}]),e}();t.default=o},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}();var o=function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e)}return n(e,null,[{key:"expiryTimestamp",value:function(e){var t=new Date(e).getTime()>0;return t||console.warn("react-timer-hook: { useTimer } Invalid expiryTimestamp settings",e),t}},{key:"onExpire",value:function(e){var t=e&&"function"==typeof e;return e&&!t&&console.warn("react-timer-hook: { useTimer } Invalid onExpire settings function",e),t}}]),e}();t.default=o},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){var r=(0,n.useRef)();(0,n.useEffect)(function(){r.current=e}),(0,n.useEffect)(function(){if(!t)return function(){};var e=setInterval(function(){r.current&&r.current()},t);return function(){return clearInterval(e)}},[t])};var n=r(0)},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},o=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var r=[],n=!0,o=!1,u=void 0;try{for(var i,a=e[Symbol.iterator]();!(n=(i=a.next()).done)&&(r.push(i.value),!t||r.length!==t);n=!0);}catch(e){o=!0,u=e}finally{try{!n&&a.return&&a.return()}finally{if(o)throw u}}return r}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}();t.default=function(e){var t=e.autoStart,r=e.offsetTimestamp,c=(0,u.useState)(i.Time.getSecondsFromExpiry(r,!0)||0),f=o(c,2),s=f[0],l=f[1],d=(0,u.useState)(new Date),m=o(d,2),v=m[0],p=m[1],y=(0,u.useState)(s+i.Time.getSecondsFromPrevTime(v||0,!0)),T=o(y,2),g=T[0],b=T[1],h=(0,u.useState)(t),S=o(h,2),w=S[0],O=S[1];return(0,a.useInterval)(function(){b(s+i.Time.getSecondsFromPrevTime(v,!0))},w?1e3:null),n({},i.Time.getTimeFromSeconds(g),{start:function(){var e=new Date;p(e),O(!0),b(s+i.Time.getSecondsFromPrevTime(e,!0))},pause:function(){l(g),O(!1)},reset:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],r=i.Time.getSecondsFromExpiry(e,!0)||0,n=new Date;p(n),l(r),O(t),b(r+i.Time.getSecondsFromPrevTime(n,!0))},isRunning:w})};var u=r(0),i=r(1),a=r(2)},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},o=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var r=[],n=!0,o=!1,u=void 0;try{for(var i,a=e[Symbol.iterator]();!(n=(i=a.next()).done)&&(r.push(i.value),!t||r.length!==t);n=!0);}catch(e){o=!0,u=e}finally{try{!n&&a.return&&a.return()}finally{if(o)throw u}}return r}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}();t.default=function(e){var t=e.format,r=(0,u.useState)(i.Time.getSecondsFromTimeNow()),c=o(r,2),f=c[0],s=c[1];return(0,a.useInterval)(function(){s(i.Time.getSecondsFromTimeNow())},1e3),n({},i.Time.getFormattedTimeFromSeconds(f,t))};var u=r(0),i=r(1),a=r(2)}])});
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react.development.js":
 /*!*****************************************************!*\
   !*** ./node_modules/react/cjs/react.development.js ***!
@@ -68132,6 +68143,122 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Countform.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Countform.js ***!
+  \**********************************************/
+/*! exports provided: Countform */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Countform", function() { return Countform; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+var Countform = function Countform() {
+  var FormhourRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var FormminutesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var FormsecondsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      Formhour = _useState2[0],
+      setFormhour = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      Formminutes = _useState4[0],
+      setFormminutes = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      Formseconds = _useState6[0],
+      setFormseconds = _useState6[1];
+
+  var setHour = function setHour() {
+    for (var i = 0; i < 24; i++) {
+      var option = document.createElement('option');
+      option.value = i;
+      option.text = i;
+      FormhourRef.current.appendChild(option);
+    }
+  };
+
+  var setMinutes = function setMinutes() {
+    for (var i = 0; i < 60; i++) {
+      var option = document.createElement('option');
+      option.value = i;
+      option.text = i;
+      FormminutesRef.current.appendChild(option);
+    }
+  };
+
+  var setSecond = function setSecond() {
+    for (var i = 0; i < 60; i++) {
+      var option = document.createElement('option');
+      option.value = i;
+      option.text = i;
+      FormsecondsRef.current.appendChild(option);
+    }
+  };
+
+  var selecthour = function selecthour(e) {
+    setFormhour(e.target.value);
+  };
+
+  var selectseconds = function selectseconds(e) {
+    setFormseconds(e.target.value);
+  };
+
+  var selectminutes = function selectminutes(e) {
+    setFormminutes(e.target.value);
+  };
+
+  var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useNavigate"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setHour();
+    setMinutes();
+    setSecond();
+  }, []);
+  console.log({
+    Formseconds: Formseconds
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u6642\u9593\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    ref: FormhourRef,
+    value: Formhour,
+    onChange: selecthour
+  }), "\u6642\u9593"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    ref: FormminutesRef,
+    value: Formminutes,
+    onChange: selectminutes
+  }), "\u5206"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    ref: FormsecondsRef,
+    value: Formseconds,
+    onChange: selectseconds
+  }), "\u79D2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return navigate('/Rcount');
+    }
+  }, " start "));
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/Example.js":
 /*!********************************************!*\
   !*** ./resources/js/components/Example.js ***!
@@ -68172,6 +68299,69 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Mytimer.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Mytimer.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-timer-hook */ "./node_modules/react-timer-hook/dist/index.js");
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function Mytimer(_ref) {
+  var expiryTimestamp = _ref.expiryTimestamp;
+
+  var _useTimer = Object(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__["useTimer"])({
+    expiryTimestamp: expiryTimestamp,
+    onExpire: function onExpire() {
+      return console.warn('onExpire called');
+    }
+  }),
+      seconds = _useTimer.seconds,
+      minutes = _useTimer.minutes,
+      hours = _useTimer.hours,
+      days = _useTimer.days,
+      isRunning = _useTimer.isRunning,
+      start = _useTimer.start,
+      pause = _useTimer.pause,
+      resume = _useTimer.resume,
+      restart = _useTimer.restart;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "react-timer-hook "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Timer Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      fontSize: "100px"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, days), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, hours), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, minutes), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, seconds)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, isRunning ? "Running" : "Not running"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: start
+  }, "Start"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: pause
+  }, "Pause"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: resume
+  }, "Resume"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      // Restarts to 5 minutes timer
+      var time = new Date();
+      time.setSeconds(time.getSeconds() + 0);
+      restart(time);
+    }
+  }, "Restart"));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Mytimer);
+
+/***/ }),
+
 /***/ "./resources/js/components/Post.js":
 /*!*****************************************!*\
   !*** ./resources/js/components/Post.js ***!
@@ -68203,6 +68393,120 @@ var Post = function Post() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Rcountdown.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Rcountdown.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rcountdown; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-timer-hook */ "./node_modules/react-timer-hook/dist/index.js");
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Mytimer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Mytimer */ "./resources/js/components/Mytimer.js");
+/* harmony import */ var _Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Test */ "./resources/js/components/Test.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+function Rcountdown() {
+  var time = new Date();
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100),
+      _useState2 = _slicedToArray(_useState, 2),
+      countdownTime = _useState2[0],
+      setCountdownTime = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      chengeDisplay = _useState4[0],
+      setChengeDisplay = _useState4[1];
+
+  time.setSeconds(time.getSeconds() + countdownTime);
+  console.log(countdownTime);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick(e) {
+      return setChengeDisplay(!chengeDisplay);
+    }
+  }, "chenge"), chengeDisplay ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Mytimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    expiryTimestamp: time
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Test__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    countdownTime: countdownTime,
+    setCountdownTime: setCountdownTime
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Rstopwatch.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Rstopwatch.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Rstopwatch; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-timer-hook */ "./node_modules/react-timer-hook/dist/index.js");
+/* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function MyStopwatch() {
+  var _useStopwatch = Object(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__["useStopwatch"])({
+    autoStart: true
+  }),
+      seconds = _useStopwatch.seconds,
+      minutes = _useStopwatch.minutes,
+      hours = _useStopwatch.hours,
+      days = _useStopwatch.days,
+      isRunning = _useStopwatch.isRunning,
+      start = _useStopwatch.start,
+      pause = _useStopwatch.pause,
+      reset = _useStopwatch.reset;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "react-timer-hook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Stopwatch Demo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      fontSize: '100px'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, days), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, hours), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, minutes), ":", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, seconds)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, isRunning ? 'Running' : 'Not running'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: start
+  }, "Start"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: pause
+  }, "Pause"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: reset
+  }, "Reset"));
+}
+
+function Rstopwatch() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MyStopwatch, null));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/Test.js":
 /*!*****************************************!*\
   !*** ./resources/js/components/Test.js ***!
@@ -68219,9 +68523,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Test() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "test");
-}
+var Test = function Test(props) {
+  var countdownTime = props.countdownTime,
+      setCountdownTime = props.setCountdownTime;
+  console.log(countdownTime);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick(e) {
+      return setCountdownTime(200);
+    }
+  }, "ttt"));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Test);
 
@@ -68244,6 +68555,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Example__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Example */ "./resources/js/components/Example.js");
 /* harmony import */ var _components_Test__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Test */ "./resources/js/components/Test.js");
 /* harmony import */ var _components_Post__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Post */ "./resources/js/components/Post.js");
+/* harmony import */ var _components_Rstopwatch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Rstopwatch */ "./resources/js/components/Rstopwatch.js");
+/* harmony import */ var _components_Countform__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Countform */ "./resources/js/components/Countform.js");
+/* harmony import */ var _components_Rcountdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Rcountdown */ "./resources/js/components/Rcountdown.js");
+
+
+
 
 
 
@@ -68262,8 +68579,14 @@ var Router = function Router() {
     path: "/posts",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Post__WEBPACK_IMPORTED_MODULE_5__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/count",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RCountdown, null)
+    path: "/Rwatch",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Rstopwatch__WEBPACK_IMPORTED_MODULE_6__["default"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/Cform",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Countform__WEBPACK_IMPORTED_MODULE_7__["Countform"], null)
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+    path: "/Rcount",
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Rcountdown__WEBPACK_IMPORTED_MODULE_8__["default"], null)
   })));
 };
 
