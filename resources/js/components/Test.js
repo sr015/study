@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Test() {
-    return (<div>test</div>)
+const Test = (props) =>  {
+    const{
+        countdownTime,
+        setCountdownTime
+    }=props;
+    console.log(countdownTime)
+    return (
+    <div>
+     <button onClick={e =>setCountdownTime(200)}>ttt</button>
+    </div>)
 }
 
 export default Test;
