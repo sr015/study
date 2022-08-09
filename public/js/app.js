@@ -68147,15 +68147,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!**********************************************!*\
   !*** ./resources/js/components/Countform.js ***!
   \**********************************************/
-/*! exports provided: Countform */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Countform", function() { return Countform; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -68170,22 +68168,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Countform = function Countform() {
-  var FormhourRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  var FormminutesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
-  var FormsecondsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+var Countform = function Countform(props) {
+  var FormhourRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0);
+  var FormminutesRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0);
+  var FormsecondsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(0);
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState2 = _slicedToArray(_useState, 2),
       Formhour = _useState2[0],
       setFormhour = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState4 = _slicedToArray(_useState3, 2),
       Formminutes = _useState4[0],
       setFormminutes = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState6 = _slicedToArray(_useState5, 2),
       Formseconds = _useState6[0],
       setFormseconds = _useState6[1];
@@ -68229,16 +68227,19 @@ var Countform = function Countform() {
     setFormminutes(e.target.value);
   };
 
-  var navigate = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["useNavigate"])();
+  var countdownTime = props.countdownTime,
+      setCountdownTime = props.setCountdownTime;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setHour();
     setMinutes();
     setSecond();
   }, []);
   console.log({
-    Formseconds: Formseconds
+    setCountdownTime: setCountdownTime
   });
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u6642\u9593\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+  var resultTime = Number(Formhour * 60 * 60) + Number(Formminutes * 60) + Number(Formseconds);
+  console.log(resultTime);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\u6642\u9593\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, resultTime), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
     ref: FormhourRef,
     value: Formhour,
     onChange: selecthour
@@ -68251,11 +68252,13 @@ var Countform = function Countform() {
     value: Formseconds,
     onChange: selectseconds
   }), "\u79D2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: function onClick() {
-      return navigate('/Rcount');
+    onClick: function onClick(e) {
+      return setCountdownTime(resultTime);
     }
-  }, " start "));
+  }, "start"));
 };
+
+/* harmony default export */ __webpack_exports__["default"] = (Countform);
 
 /***/ }),
 
@@ -68408,7 +68411,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-timer-hook */ "./node_modules/react-timer-hook/dist/index.js");
 /* harmony import */ var react_timer_hook__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_timer_hook__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Mytimer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Mytimer */ "./resources/js/components/Mytimer.js");
-/* harmony import */ var _Test__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Test */ "./resources/js/components/Test.js");
+/* harmony import */ var _Countform__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Countform */ "./resources/js/components/Countform.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -68428,7 +68431,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Rcountdown() {
   var time = new Date();
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(100),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
       _useState2 = _slicedToArray(_useState, 2),
       countdownTime = _useState2[0],
       setCountdownTime = _useState2[1];
@@ -68446,7 +68449,7 @@ function Rcountdown() {
     }
   }, "chenge"), chengeDisplay ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Mytimer__WEBPACK_IMPORTED_MODULE_2__["default"], {
     expiryTimestamp: time
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Test__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Countform__WEBPACK_IMPORTED_MODULE_3__["default"], {
     countdownTime: countdownTime,
     setCountdownTime: setCountdownTime
   }));
@@ -68583,7 +68586,7 @@ var Router = function Router() {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Rstopwatch__WEBPACK_IMPORTED_MODULE_6__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/Cform",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Countform__WEBPACK_IMPORTED_MODULE_7__["Countform"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Countform__WEBPACK_IMPORTED_MODULE_7__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/Rcount",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Rcountdown__WEBPACK_IMPORTED_MODULE_8__["default"], null)

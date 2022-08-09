@@ -5,7 +5,7 @@ import Example from "../components/Example";
 import Test from "../components/Test";
 import Post from "../components/Post";
 import Rstopwatch from "../components/Rstopwatch";
-import {Countform} from "../components/Countform";
+import Countform from "../components/Countform";
 import Rcountdown from "../components/Rcountdown";
 
 const Router= () => {

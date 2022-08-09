@@ -1,17 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
-export const Countform = () => {
-    const FormhourRef = useRef(null);
-    const FormminutesRef = useRef(null);
-    const FormsecondsRef = useRef(null);
-
-
-const[Formhour, setFormhour] = useState("");
-const[Formminutes, setFormminutes] = useState("");
-const[Formseconds, setFormseconds] = useState("");
+const Countform = (props) => {
+    const FormhourRef = useRef(0);
+    const FormminutesRef = useRef(0);
+    const FormsecondsRef = useRef(0);
 
 
+const[Formhour, setFormhour] = useState(0);
+const[Formminutes, setFormminutes] = useState(0);
+const[Formseconds, setFormseconds] = useState(0);
 
 const setHour = () =>
 {
@@ -61,18 +58,26 @@ const selectminutes = (e) =>{
     setFormminutes(e.target.value);
 }
 
-const navigate = useNavigate();
 
+const{
+    countdownTime,
+    setCountdownTime
+}=props;
 
 useEffect(() => {
     setHour();
     setMinutes();
     setSecond();
 },[]);
-console.log({Formseconds});
+console.log({setCountdownTime});
+
+const resultTime=Number(((Formhour)*60*60))+Number(((Formminutes)*60))+Number(Formseconds)
+console.log(resultTime)
+
 return (
     <div>
     <p>時間を入力してください</p>
+    <p>{resultTime}</p>
     <label>
         <select ref={FormhourRef} value={Formhour} onChange={selecthour}></select>時間
     </label>
@@ -82,8 +87,9 @@ return (
         <label>
         <select ref={FormsecondsRef} value={Formseconds} onChange={selectseconds}></select>秒
     </label>
-    <button onClick={() => navigate('/Rcount')}> start </button>
+    <button onClick={e =>setCountdownTime(resultTime)}>start</button>
    </div>
 
     )
 }
+export default Countform;
