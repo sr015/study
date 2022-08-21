@@ -16,6 +16,8 @@
 
                     You are logged in!
                 </div>
+                <div id="root"></div>
+                <script  type="application/javascript" src="{{ mix('js/app.js') }}"></script>
             </div>
         </div>
     </div>
