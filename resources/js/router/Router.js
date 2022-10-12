@@ -7,6 +7,9 @@ import Todo from "../components/Todo";
 import Rstopwatch from "../components/Rstopwatch";
 import Countform from "../components/Countform";
 import Rcountdown from "../components/Rcountdown";
+import Pic from "../components/Pic";
+import Piccat from "../components/Piccat";
+import Rid from "../components/RID";
 
 const Router= () => {
     return (
@@ -18,7 +21,9 @@ const Router= () => {
                  <Route path="/Rwatch" element={<Rstopwatch />} />
                  <Route path="/Cform" element={<Countform />} />
                  <Route path="/Rcount" element={<Rcountdown />} />
-                 
+                 <Route path="/pic" element={<Pic />} />
+                 <Route path="/pic2" element={<Piccat />} />
+                 <Route path="/rid" element={<Rid />} />
             </Routes>
         </BrowserRouter>
     );
