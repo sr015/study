@@ -17,6 +17,8 @@ class CreateTodosTable extends Migration
             $table->bigIncrements('id');
             $table->string('body',50);
             $table->boolean('check');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
